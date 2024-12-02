@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                 // JavaScript version to compile to
+      "module": "ES6",            // Use CommonJS modules
+      "strict": true,                  // Enable all strict type checking options
+      "esModuleInterop": true,         // Support for CommonJS/ES module interop
+      "allowSyntheticDefaultImports": true, // Allow default imports for compatibility
+      "outDir": "./dist",              // Output directory for compiled .js files
+      "rootDir": "./src",              // Root directory of your TypeScript files
+      "moduleResolution": "node",      // Use Node.js-style module resolution
+      "noImplicitAny": true            // Catch variables that lack a type
+    },
+    "include": [
+      "./src/**/*"                     // Include all .ts files in the src folder
+    ],
+    "exclude": [
+      "node_modules",                  // Exclude dependency folder
+      "**/*.test.ts"                   // Exclude test files (if any)
+    ]
+  }

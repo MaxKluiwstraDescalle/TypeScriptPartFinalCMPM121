@@ -11,6 +11,8 @@
     "typescript": "^5.7.2"
   },
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   }
 }

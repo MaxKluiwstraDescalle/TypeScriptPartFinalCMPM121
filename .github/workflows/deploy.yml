@@ -10,21 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Check out the repository code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Set up Node.js environment (upgrade to Node.js 18+)
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16 # Use the Node.js version compatible with Vite
+          node-version: 18 # Use Node.js >= 18 to support structuredClone
           cache: 'npm'
 
+      # Install project dependencies
       - name: Install dependencies
         run: npm install
 
+      # Build the project using Vite
       - name: Build project
         run: npm run build
 
+      # Deploy the build output (dist folder) to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
